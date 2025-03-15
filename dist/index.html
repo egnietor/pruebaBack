@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Técnica</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="data:,"> <!-- Deshabilita la solicitud del favicon -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src *;">
+</head>
+<body>
+
+    <!-- Plantilla Handlebars -->
+    <script id="template" type="text/x-handlebars-template">
+        <header>
+            <div class="logo">
+                <a href="{{logo.[0].href}}">
+                    <img src="{{logo.[0].image.src}}" alt="{{logo.[0].alt}}" width="{{logo.[0].image.width}}" height="{{logo.[0].image.height}}">
+                </a>
+            </div>
+            <nav class="main-nav">
+                {{#each breadcrumbs}}
+                    <a href="{{href}}">{{body}}</a>
+                {{/each}}
+            </nav>
+        </header>
+
+        <section class="page-lead">
+            <img src="{{pageLead.[0].image.src}}" alt="{{pageLead.[0].alt}}">
+        </section>
+
+        <section class="content">
+            <div class="content-wrapper">
+                <div class="image-container">
+                    <img src="{{lead.[0].image.src}}" alt="{{lead.[0].alt}}">
+                </div>
+                <div class="text-container">
+                    <h1>{{headline}}</h1>
+                    <p>{{{subHeadline}}}</p>
+                    <div class="audio-player">
+                        <button>
+                            <img src="images/play-icon.png" alt="Play Icon">
+                            Escuchar audio
+                        </button>
+                    </div>
+                    <div class="actions">
+                        {{#each actions.[0].items}}
+                            <a href="{{shareHref}}" target="_blank">
+                                <img src="{{icon}}" alt="{{body}} Icon">
+                                {{body}}
+                            </a>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </script>
+
+    <!-- Contenedor donde se renderiza la plantilla -->
+    <div id="content"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <!-- Puedes agregar contenido adicional aquí -->
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+
+</body>
+</html>

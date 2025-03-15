@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{headline}}</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Logo -->
+    <header>
+        <a href="{{logo.[0].href}}">
+            <img src="{{logo.[0].image.src}}" alt="{{logo.[0].alt}}" width="{{logo.[0].image.width}}" height="{{logo.[0].image.height}}">
+        </a>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <nav>
+        {{#each breadcrumbs}}
+            <a href="{{href}}">{{body}}</a> /
+        {{/each}}
+    </nav>
+
+    <!-- Imagen Principal -->
+    <section>
+        <img src="{{pageLead.[0].image.src}}" alt="{{pageLead.[0].alt}}" width="{{pageLead.[0].image.width}}" height="{{pageLead.[0].image.height}}">
+    </section>
+
+    <!-- Título y Descripción -->
+    <h1>{{headline}}</h1>
+    <p>{{{subHeadline}}}</p>
+
+    <!-- Botón para Reproducir Audio -->
+    <button id="play-audio">Reproducir</button>
+    <audio id="audio" src="{{audioPlayer.[0].audioUrl}}"></audio>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
