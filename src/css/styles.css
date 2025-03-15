@@ -103,6 +103,12 @@ header .main-nav a:hover {
 .audio-player button img {
   margin-right: 10px;
 }
+.audio-player button {
+  transition: background-color 0.3s ease;
+}
+.audio-player button:hover {
+  background-color: #ff9900;
+}
 .actions {
   margin: 20px 0;
   display: flex;
